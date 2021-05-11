@@ -21,7 +21,7 @@ git clone https://github.com/wwpry/bot-y
 mkdir /bot/
 mv /bot-y/bot/* /bot/
 chmod 0777 /bot/ -R
-rm -rf /new_bot
+rm -rf /bot-y
 
 nohup aria2c --conf-path=/root/.aria2/aria2.conf --rpc-listen-port=8080 --rpc-secret=$Aria2_secret &
 nohup python3 /bot/web.py &
