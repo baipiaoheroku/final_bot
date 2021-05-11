@@ -19,7 +19,7 @@ chmod 0777 /tracker.sh
 
 git clone https://github.com/wwpry/bot-y
 mkdir /bot/
-mv /new_bot/bot/* /bot/
+mv /bot-y/bot/* /bot/
 chmod 0777 /bot/ -R
 rm -rf /new_bot
 
