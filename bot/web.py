@@ -21,9 +21,9 @@ def proxypost():
     #获取到POST过来的数据，因为我这里传过来的数据需要转换一下编码。根据晶具体情况而定
     return (post(url=url,data=student).content)
 
-app.route('/about', methods=['GET'])
-def index():
-    return send_file("index.html")
+#app.route('/about', methods=['GET'])
+#def index():
+    #return send_file("index.html")
 
 @app.route('/jsonrpc/',methods=['GET'])
 def proxyget():
@@ -35,23 +35,23 @@ def proxyget():
     #http://127.0.0.1:5000/jsonrpc?jsonrpc=2.0&method=aria2.getGlobalStat&id=QXJpYU5nXzE2MTM4ODAwNTBfMC44NTY2NjkzOTUyMjEzNDg3&params=WyJ0b2tlbjp3Y3k5ODE1MSJd&
     return get(url=url,params=par).content
 
-@app.route('/<path:path>',methods=['GET'])
-def proxy(path):
-    if flask.request.method == 'GET':
-        resp = requests.get(f'{main_site}{path}')
-        excluded_headers = ['content-encoding', 'content-length', 'transfer-encoding', 'connection']
-        headers = [(name, value) for (name, value) in resp.raw.headers.items() if name.lower() not in excluded_headers]
-        response = Response(resp.content, resp.status_code, headers)
-        return response
+#@app.route('/<path:path>',methods=['GET'])
+#def proxy(path):
+    #if flask.request.method == 'GET':
+        #resp = requests.get(f'{main_site}{path}')
+        #excluded_headers = ['content-encoding', 'content-length', 'transfer-encoding', 'connection']
+        #headers = [(name, value) for (name, value) in resp.raw.headers.items() if name.lower() not in excluded_headers]
+        #response = Response(resp.content, resp.status_code, headers)
+        #return response
 
-@app.route('/', methods=['GET'])
-def index():
-    if flask.request.method == 'GET':
-        resp = requests.get(f'{main_site}')
-        excluded_headers = ['content-encoding', 'content-length', 'transfer-encoding', 'connection']
-        headers = [(name, value) for (name, value) in resp.raw.headers.items() if name.lower() not in excluded_headers]
-        response = Response(resp.content, resp.status_code, headers)
-        return response
+#@app.route('/', methods=['GET'])
+#def index():
+    #if flask.request.method == 'GET':
+        #resp = requests.get(f'{main_site}')
+        #excluded_headers = ['content-encoding', 'content-length', 'transfer-encoding', 'connection']
+        #headers = [(name, value) for (name, value) in resp.raw.headers.items() if name.lower() not in excluded_headers]
+        #response = Response(resp.content, resp.status_code, headers)
+        #return response
 
 if __name__ == '__main__':
 
