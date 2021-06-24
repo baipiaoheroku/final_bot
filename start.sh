@@ -1,5 +1,5 @@
 #!/bin/bash
-
+pip3 install  pyrogram --upgrade
 pip3 install mutagen
 service caddy start
 yes "4" | bash status.sh s
