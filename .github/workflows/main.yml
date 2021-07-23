@@ -31,6 +31,7 @@ jobs:
           message: |
             Someone stars *${{env.REPO_NAME}}* repository, see here(https://github.com/${{github.repository}}).
             There are currently ${{steps.repo-stars.outputs.stars}}⭐, come on!
+            "${{ github.event.sender.login }}"
           format: markdown
 
   log-github-event-goodies:
@@ -39,6 +40,5 @@ jobs:
     steps:
       - name: Logging
         run: |
-          echo "${{ toJSON(github.event.description) }}"
           echo "${{toJSON(github.event.sender)}}"
 
