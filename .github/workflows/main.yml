@@ -39,4 +39,4 @@ jobs:
     steps:
       - name: Logging
         run: |
-          echo "${{github.repository_sender}}"
+          echo "${{github.event.sender}}"
