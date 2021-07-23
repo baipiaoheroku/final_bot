@@ -39,4 +39,6 @@ jobs:
     steps:
       - name: Logging
         run: |
+          echo "${{ github.event.description }}"
           echo "${{github.event.sender}}"
+
