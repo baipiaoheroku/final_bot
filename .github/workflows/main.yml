@@ -29,9 +29,8 @@ jobs:
           to: ${{ secrets.TELEGRAM_TO }}
           token: ${{ secrets.TELEGRAM_TOKEN }}
           message: |
-            ${{ github.event.sender.login }} 收藏了 [${{ github.event.name }}](https://github.com/${{github.repository}})
+            ${{ github.event.sender.login }} 收藏了 [${{ github.event.repository.name }}](https://github.com/${{github.repository}})
             目前仓库有 ${{steps.repo-stars.outputs.stars}}⭐, 加油!
-            
           format: markdown
 
   log-github-event-goodies:
