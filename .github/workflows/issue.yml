@@ -4,8 +4,9 @@ name: Repo Issues Notify
 
 
 on:
-  issues:
-    types: [opened, edited, milestoned]
+  # Triggers the workflow on push or pull request events but only for the master branch
+  watch:
+    action: started
 
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
