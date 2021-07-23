@@ -34,4 +34,4 @@ jobs:
           format: markdown
       - name: test
         run: |
-          echo ${{ github }}
+          echo ${{ github.event }}
