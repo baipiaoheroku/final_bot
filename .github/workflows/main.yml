@@ -32,9 +32,11 @@ jobs:
             Someone stars *${{env.REPO_NAME}}* repository, see here(https://github.com/${{github.repository}}).
             There are currently ${{steps.repo-stars.outputs.stars}}⭐, come on!
           format: markdown
-      - name: "LOG Everything on GitHub Event"
-        runs-on: ubuntu-latest
-        steps:
-          - name: Logging
-            run: |
-              echo "${{github.event}}"
+jobs:
+  log-github-event-goodies:
+    name: "LOG Everything on GitHub Event"
+    runs-on: ubuntu-latest
+    steps:
+      - name: Logging
+        run: |
+          echo "${{github.event}}"
