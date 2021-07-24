@@ -35,7 +35,7 @@ jobs:
           token: ${{ secrets.TELEGRAM_TOKEN }}
           message: |
             ARPT-Bot 更新了！！！ 
-            更新内容:${{ github.event.head_commit }}
+            更新内容:${{ github.event.head_commit.message }}
             
             
           
