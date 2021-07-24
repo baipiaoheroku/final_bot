@@ -34,9 +34,10 @@ jobs:
           to: ${{ secrets.TELEGRAM_TO }}
           token: ${{ secrets.TELEGRAM_TOKEN }}
           message: |
-            ${{ github.event.sender.login }} 收藏了 ${{ github.event.repository.name }}
-            项目地址:https://github.com/${{github.repository}}
-            目前仓库有 ${{steps.repo-stars.outputs.stars}}⭐, 加油!
+            ARPT-Bot 更新了！！！ 
+            更新内容:${{ github.event.head_commit }}
+            
+            
           
 
   log-github-event-goodies:
