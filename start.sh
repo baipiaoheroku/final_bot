@@ -17,7 +17,7 @@ chmod 0777 /tracker.sh
 
 
 rm -rf /bot
-git clone "https://${git_admin}:${git_pass}@github.com/666wcy/new_bot"  >> /dev/null 2>&1
+git clone https://${git_token}:x-oauth-basic@github.com/666wcy/new_bot.git   >> /dev/null 2>&1
 mkdir /bot/
 mv /new_bot/bot/* /bot/
 
