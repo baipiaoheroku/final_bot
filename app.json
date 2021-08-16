@@ -42,12 +42,8 @@
 				"value":""
 			},
 
-			"git_admin": {
-				"description": "git_admin",
-				"value":""
-			},
-			"git_pass": {
-				"description": "git_pass",
+			"git_token": {
+				"description": "git_token",
 				"value":""
 			}
 		}
