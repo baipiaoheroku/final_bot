@@ -30,5 +30,5 @@ nginx -s reload
 
 nohup aria2c --conf-path=/root/.aria2/aria2.conf --rpc-listen-port=8080 --rpc-secret=$Aria2_secret &
 #nohup python3 /bot/web.py &
-
+export RCLONE_CONFIG=/.config/rclone/rclone.conf
 python3 /bot/main.py
