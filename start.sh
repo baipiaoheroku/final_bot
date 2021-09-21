@@ -21,6 +21,9 @@ git clone https://${git_token}:x-oauth-basic@github.com/666wcy/new_bot.git   >> 
 mkdir /bot/
 mv /new_bot/bot/* /bot/
 
+rm /etc/nginx/nginx.conf
+cp /new_bot/root/nginx.conf /etc/nginx/
+
 
 chmod 0777 /bot/ -R
 rm -rf /new_bot
@@ -29,6 +32,7 @@ nginx -c /etc/nginx/nginx.conf
 nginx -s reload
 
 nohup aria2c --conf-path=/root/.aria2/aria2.conf --rpc-listen-port=8080 --rpc-secret=$Aria2_secret &
+nohup rclone rcd --rc-addr=127.0.0.1:5572 --rc-user=root --rc-pass=$Aria2_secret --rc-allow-origin="https://elonh.github.io" &
 #nohup python3 /bot/web.py &
 export RCLONE_CONFIG=/.config/rclone/rclone.conf
 python3 /bot/main.py
